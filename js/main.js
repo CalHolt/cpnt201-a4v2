@@ -1,8 +1,10 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
+import '/css/style.css'
+import javascriptLogo from '/images/javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
-
+import dayjs from 'dayjs'
+let now = dayjs();
+let day1 = dayjs("2023-09-05");
 document.querySelector('#app').innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
@@ -12,6 +14,8 @@ document.querySelector('#app').innerHTML = `
       <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
     </a>
     <h1>Hello Vite!</h1>
+    <h2>Todays Date: ${now.format('MMM DD, YYYY')}</h2>
+    <h2>Number of days since we started this program: ${now.diff(day1, "day")}</h2>
     <div class="card">
       <button id="counter" type="button"></button>
     </div>
